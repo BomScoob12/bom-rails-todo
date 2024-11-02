@@ -13,21 +13,15 @@
       </svg>
     <% end %>
   </div>
-</section>
 
-<section>
-
-<h1>Todos</h1>
-
-<div id="todos">
-  <% @todos.each do |todo| %>
-    <%= render todo %>
-    <p>
-      <%= link_to "Show this todo", todo %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New todo", new_todo_path %>
-
+  <div id="todos" class="p-2 bg-white shadow-sm mt-3">
+      <% @todos.each do |todo| %>
+      <div class="mt-1 p-2 border border-gray-300 rounded-lg hover:bg-gray-400">
+        <%= render todo %>
+        <p>
+          <%= link_to "Show this todo", todo %>
+        </p>
+      </div>
+      <% end %>
+  </div> 
 </section>
