@@ -3,7 +3,11 @@ class TodosController < ApplicationController
 
   # GET /todos or /todos.json
   def index
-    @todos = Todo.all
+    if params[:title].present?
+      @todos = Todo.where('title LIKE ?', "%#{params[:title]}%")
+    else
+      @todos = Todo.all
+    end
   end
 
   # GET /todos/1 or /todos/1.json
