@@ -1,6 +1,16 @@
 <%= form_with(model: todo) do |form| %>
+  <div class="mb-4">
+    <%= form.label :title, class: "block font-bold" %>
+    <%= form.text_field :title, class: "shadow rounded-md border border-gray-300 outline-none px-3 py-2 mt-2 w-full bg-transparent hover:border-orange-600 focus:border-orange-600 focus:ring-orange-600", placeholder: "Enter todo title" %>
+  </div>
+
+ <div class="mb-4">
+    <%= form.label :completed, class: "block font-bold" %>
+    <%= form.select :completed, [["Not Completed", "not_completed"], ["Completed", "completed"]], {}, class: "shadow rounded-md border border-gray-300 outline-none px-3 py-2 mt-2 w-full bg-transparent hover:border-orange-600 focus:border-orange-600 focus:ring-orange-600" %>
+  </div> 
+
   <% if todo.errors.any? %>
-    <div style="color: red">
+    <div style="color: red" class="mb-4">
       <h2><%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
 
       <ul>
@@ -11,17 +21,7 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_area :title %>
-  </div>
-
-  <div>
-    <%= form.label :completed, style: "display: block" %>
-    <%= form.number_field :completed %>
-  </div>
-
-  <div>
+  <div class="rounded-lg px-3 py-2 bg-orange-600 w-fit text-white hover:bg-orange-800 ">
     <%= form.submit %>
   </div>
 <% end %>
