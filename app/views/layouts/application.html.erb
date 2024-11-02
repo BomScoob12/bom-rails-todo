@@ -16,10 +16,16 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <style>
+      body {
+         background-image: url("https://www.freepik.com/free-vector/gradient-white-monochrome-background_15628817.htm#fromView=search&page=1&position=52&uuid=389806e5-3854-4e94-94db-1937dd40efe4")
+      }
+      
+    </style>
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container mx-auto mt-28 px-5 flex flex-col">
       <%= yield %>
     </main>
   </body>
